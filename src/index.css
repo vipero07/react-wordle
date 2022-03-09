@@ -66,9 +66,9 @@ svg.cursor-pointer:hover {
   animation-duration: var(--animation-speed-fast);
 }
 
-.navbar {
+/* .navbar {
   margin-bottom: 2%;
-}
+} */
 
 .navbar-content {
   display: flex;
