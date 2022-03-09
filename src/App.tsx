@@ -52,6 +52,7 @@ function App() {
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
+  const [entryExposed, setEntryExposed] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
   const [isDarkMode, setIsDarkMode] = useState(
@@ -257,7 +258,21 @@ function App() {
             currentRowClassName={currentRowClass}
           />
         </div>
-        <div className="py-2">{/* Below Gameboard */}</div>
+        <div className="py-2 flex justify-center gap-4">
+          {/* Below Gameboard */}
+          {entryExposed && (
+            <label>
+              <input className="h-10 rounded w-40" />
+            </label>
+          )}
+          <button
+            type="button"
+            className="bg-blue-400 rounded py-2 px-3"
+            onClick={() => setEntryExposed((val) => !val)}
+          >
+            {entryExposed ? 'Hide' : 'Expose'} Entry
+          </button>
+        </div>
         <Keyboard
           onChar={onChar}
           onDelete={onDelete}
